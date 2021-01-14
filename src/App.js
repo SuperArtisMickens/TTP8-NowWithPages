@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 // other imports
-import MiniDrawer from './components/MiniDrawer';
+import MiniDrawer from './MiniDrawer';
 
 class App extends Component {
 	// other member functions and variables can go here

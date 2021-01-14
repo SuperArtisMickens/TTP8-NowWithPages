@@ -14,18 +14,23 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import SimpleSnackbar from './Snackbar';
-import AboutUs from './AboutUs';
-import AppForm from './AppForm';
-import SimpleDialogDemo from './Login';
-import ContactUs from './ContactUs';
-import Poll from './Poll';
-import DayChallange from './DayChallange';
+import SimpleSnackbar from './components/Snackbar';
+import AppForm from './components/AppForm';
+import SimpleDialogDemo from './components/Login';
+import ContactUs from './components/ContactUs';
+import Poll from './components/Poll';
+import Button from '@material-ui/core/Button';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+import About from './About';
+import Marathon from './Marathon';
 
 const drawerWidth = 240;
 
@@ -105,6 +110,7 @@ export default function MiniDrawer() {
 	};
 
 	return (
+		<Router>
 		<div className={classes.root}>
 			<CssBaseline />
 			<AppBar
@@ -152,32 +158,59 @@ export default function MiniDrawer() {
 					</IconButton>
 				</div>
 				<Divider />
+
+				{/* These are the links to the pages that connect them to components */}
 				<List>
-					{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-						<ListItem button key={text}>
-							<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-							<ListItemText primary={text} />
-						</ListItem>
-					))}
+					<ListItem>
+						{/* This link leads to the AboutUs component */}
+						<Link to="/about">
+							<Button><MailIcon></MailIcon> About </Button>
+						</Link>
+					</ListItem>
 				</List>
 				<Divider />
 				<List>
-					{['All mail', 'Trash', 'Spam'].map((text, index) => (
-						<ListItem button key={text}>
-							<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-							<ListItemText primary={text} />
+					<ListItem>
+						<ListItem>
+							{/* This link leads to the Day Challenge component */}
+							<Link to="/marathon">
+								<Button><MailIcon></MailIcon> 52 Week Marathon </Button>
+							</Link>
 						</ListItem>
-					))}
+					</ListItem>
 				</List>
+			
 			</Drawer>
 			<main className={classes.content}>
 				<div className={classes.toolbar} />
 
 				<Grid container spacing={3}>
-					{/* Snackbar */}
+
+
+					{/* Snackbar: Didn't see a reason not to keep this button on the screen at all times */}
 					<Grid item xs={12}>
 						<SimpleSnackbar></SimpleSnackbar>
+
+						{/* Switch to your pages here! */}
+						<Switch>
+							{/* This switches to the About page with the AboutUs component */}
+							<Route path="/about">
+								<About/>
+							</Route>
+							{/* This switches to the Marathon page with the Day Challenge component */}
+							<Route path="/marathon">
+								<Marathon/>
+							</Route>
+							{/* This is the home page that isnt hooked up to anything right now */}
+							<Route path="/">
+								<MiniDrawer/>
+							</Route>
+						</Switch>
 					</Grid>
+
+					{/* The components below can still be moved over to be a part of
+					the pages. I moved 2 as practice and for example. For now, they're 
+					just displayed at all times. */}
 
 					{/* Application */}
 					<Grid item xs={12}>
@@ -187,13 +220,7 @@ export default function MiniDrawer() {
 						<AppForm />
 					</Grid>
 
-					{/* About Us */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs={12}>
-						<AboutUs />
-					</Grid>
+
 
 					{/* Poll */}
 					<Grid item xs={12}>
@@ -203,13 +230,6 @@ export default function MiniDrawer() {
 						<Poll />
 					</Grid>
 
-					{/* Challenge */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs={12}>
-						<DayChallange />
-					</Grid>
 
 					{/* Contact Us */}
 					<Grid item xs={12}>
@@ -221,7 +241,9 @@ export default function MiniDrawer() {
 					</Grid>
 					<Grid item xs></Grid>
 				</Grid>
+				
 			</main>
 		</div>
+		</Router>
 	);
 }
