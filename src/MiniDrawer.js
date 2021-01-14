@@ -21,7 +21,15 @@ import SimpleDialogDemo from './components/Login';
 import ContactUs from './components/ContactUs';
 import Poll from './components/Poll';
 import Button from '@material-ui/core/Button';
-import { Link } from "react-router-dom";
+
+import {
+	Switch,
+	Route,
+	Link,
+  } from "react-router-dom";
+  
+  import About from './About';
+  import Marathon from './Marathon';
 
 const drawerWidth = 240;
 
@@ -181,6 +189,20 @@ export default function MiniDrawer() {
 					{/* Snackbar: Didn't see a reason not to keep this button on the screen at all times */}
 					<Grid item xs={12}>
 						<SimpleSnackbar></SimpleSnackbar>
+						{/* Switch to your pages here! */}
+						<Switch>
+							{/* This switches to the About page with the AboutUs component */}
+							<Route path="/About">
+								<About/>
+							</Route>
+							{/* This switches to the Marathon page with the Day Challenge component */}
+							<Route path="/Marathon">
+								<Marathon/>
+							</Route>
+							{/* This is the home page that isnt hooked up to anything right now */}
+							<Route path="/">
+							</Route>
+						</Switch>
 
 					</Grid>
 
