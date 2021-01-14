@@ -85,7 +85,7 @@ export default function BasicTable() {
 By the end of the year, if you complete the challenge, you’ll have saved $1,378.</h5>
 			<TableContainer component={Paper}>
 				<Table className={classes.table} aria-label="simple table">
-					<TableHead> 
+					<TableHead>
 						<TableRow>
 							<TableCell align="left">Week Number#</TableCell>
 							<TableCell align="left">Deposit Amount</TableCell>
