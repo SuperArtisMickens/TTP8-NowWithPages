@@ -21,16 +21,7 @@ import SimpleDialogDemo from './components/Login';
 import ContactUs from './components/ContactUs';
 import Poll from './components/Poll';
 import Button from '@material-ui/core/Button';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
-
-import About from './About';
-import Marathon from './Marathon';
+import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -110,7 +101,7 @@ export default function MiniDrawer() {
 	};
 
 	return (
-		<Router>
+	
 		<div className={classes.root}>
 			<CssBaseline />
 			<AppBar
@@ -163,7 +154,7 @@ export default function MiniDrawer() {
 				<List>
 					<ListItem>
 						{/* This link leads to the AboutUs component */}
-						<Link to="/about">
+						<Link to="/About">
 							<Button><MailIcon></MailIcon> About </Button>
 						</Link>
 					</ListItem>
@@ -173,7 +164,7 @@ export default function MiniDrawer() {
 					<ListItem>
 						<ListItem>
 							{/* This link leads to the Day Challenge component */}
-							<Link to="/marathon">
+							<Link to="/Marathon">
 								<Button><MailIcon></MailIcon> 52 Week Marathon </Button>
 							</Link>
 						</ListItem>
@@ -191,21 +182,6 @@ export default function MiniDrawer() {
 					<Grid item xs={12}>
 						<SimpleSnackbar></SimpleSnackbar>
 
-						{/* Switch to your pages here! */}
-						<Switch>
-							{/* This switches to the About page with the AboutUs component */}
-							<Route path="/about">
-								<About/>
-							</Route>
-							{/* This switches to the Marathon page with the Day Challenge component */}
-							<Route path="/marathon">
-								<Marathon/>
-							</Route>
-							{/* This is the home page that isnt hooked up to anything right now */}
-							<Route path="/">
-								<MiniDrawer/>
-							</Route>
-						</Switch>
 					</Grid>
 
 					{/* The components below can still be moved over to be a part of
@@ -244,6 +220,6 @@ export default function MiniDrawer() {
 				
 			</main>
 		</div>
-		</Router>
+		
 	);
 }

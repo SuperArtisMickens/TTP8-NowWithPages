@@ -5,11 +5,38 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import theme from './theme'
 import { ThemeProvider } from '@material-ui/core/styles';
+import MiniDrawer from './MiniDrawer';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+
+import About from './About';
+import Marathon from './Marathon';
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <Router>
+        <App />
+						{/* Switch to your pages here! */}
+						<Switch>
+							{/* This switches to the About page with the AboutUs component */}
+							<Route path="/About">
+								<About/>
+							</Route>
+							{/* This switches to the Marathon page with the Day Challenge component */}
+							<Route path="/Marathon">
+								<Marathon/>
+							</Route>
+							{/* This is the home page that isnt hooked up to anything right now */}
+							<Route path="/">
+								<MiniDrawer/>
+							</Route>
+						</Switch>
+      </Router>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -16,8 +16,10 @@ class App extends Component {
 		return (
 			// JSX / HTML  goes here
 			<div className="App">
+
 				<MiniDrawer>
 				</MiniDrawer>
+				
 			</div>
 		);
 	}
