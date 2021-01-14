@@ -16,18 +16,17 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import MailIcon from '@material-ui/icons/Mail';
 import SimpleSnackbar from './components/Snackbar';
-import AppForm from './components/AppForm';
 import SimpleDialogDemo from './components/Login';
-import ContactUs from './components/ContactUs';
-import Poll from './components/Poll';
 import Button from '@material-ui/core/Button';
+import FriendCont from './components/FriendCont';
+import Submissions from './components/Submissions';
 
 import {
 	Switch,
 	Route,
 	Link,
-  } from "react-router-dom";
-  
+} from "react-router-dom";
+
 import Info from './Info';
 import Marathon from './Marathon';
 
@@ -109,7 +108,7 @@ export default function MiniDrawer() {
 	};
 
 	return (
-	
+
 		<div className={classes.root}>
 			<CssBaseline />
 			<AppBar
@@ -174,9 +173,28 @@ export default function MiniDrawer() {
 						<Link to="/Marathon">
 							<Button>52 Week Marathon </Button>
 						</Link>
+
 					</ListItem>
+
+					<ListItem>
+						{/* This link leads to the Friend Cont */}
+						<Link to="/FriendCont">
+							<Button>Refer A Friend! </Button>
+						</Link>
+
+
+					</ListItem>
+
+					<ListItem>
+						{/*This link leads to Submissions*/}
+						<Link to="/Submissions">
+							<Button>Submissions</Button>
+						</Link>
+
+					</ListItem>
+
 				</List>
-			
+
 			</Drawer>
 			<main className={classes.content}>
 				<div className={classes.toolbar} />
@@ -191,15 +209,25 @@ export default function MiniDrawer() {
 						<Switch>
 							{/* This switches to the About page with the AboutUs component */}
 							<Route path="/Info">
-								<Info/>
+								<Info />
 							</Route>
 							{/* This switches to the Marathon page with the Day Challenge component */}
 							<Route path="/Marathon">
-								<Marathon/>
+								<Marathon />
 							</Route>
+							{/* This is the home page that isnt hooked up to anything right now */}
+							<Route path="/FriendCont">
+								<FriendCont />
+							</Route>
+							{/* This switches to Submissions page*/}
+							<Route path="/Submissions">
+								<Submissions />
+							</Route>
+
 							{/* This is the home page that isnt hooked up to anything right now */}
 							<Route path="/">
 							</Route>
+
 						</Switch>
 
 					</Grid>
@@ -208,38 +236,10 @@ export default function MiniDrawer() {
 					the pages. I moved 2 as practice and for example. For now, they're 
 					just displayed at all times. */}
 
-					{/* Application */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs={12}>
-						<AppForm />
-					</Grid>
-
-
-
-					{/* Poll */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs={12}>
-						<Poll />
-					</Grid>
-
-
-					{/* Contact Us */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs></Grid>
-					<Grid item xs={8}>
-						<ContactUs />
-					</Grid>
-					<Grid item xs></Grid>
 				</Grid>
-				
+
 			</main>
 		</div>
-		
+
 	);
 }
