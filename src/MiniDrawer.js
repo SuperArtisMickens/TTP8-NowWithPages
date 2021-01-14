@@ -129,12 +129,16 @@ export default function MiniDrawer() {
 					>
 						<MenuIcon />
 					</IconButton>
-
-					<Typography variant="h6" noWrap>
-						HeYau DeKredit
-					</Typography>
-					<SimpleDialogDemo />
-
+					<Grid container>
+						<Grid item xs={11}>
+							<Typography variant="h6" noWrap>
+								HeYau DeKredit
+							</Typography>
+						</Grid>
+						<Grid item xs={1}>
+							<SimpleDialogDemo />
+						</Grid>
+					</Grid>
 				</Toolbar>
 			</AppBar>
 			<Drawer
@@ -255,18 +259,9 @@ export default function MiniDrawer() {
 							</Route>
 
 						</Switch>
-
 					</Grid>
-
-					{/* The components below can still be moved over to be a part of
-					the pages. I moved 2 as practice and for example. For now, they're 
-					just displayed at all times. */}
-
 				</Grid>
-
 			</main>
 		</div>
-
-
 	);
 }
