@@ -5,49 +5,49 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 export default function SimpleSnackbar() {
-  const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = React.useState(false);
 
-  const handleClick = () => {
-    setOpen(true);
-  };
+	const handleClick = () => {
+		setOpen(true);
+	};
 
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
+	const handleClose = (event, reason) => {
+		if (reason === 'clickaway') {
+			return;
+		}
 
-    setOpen(false);
-  };
+		setOpen(false);
+	};
 
-  return (
-    <div>
+	return (
+		<div>
 
-      <Button onClick={handleClick}>Don't click me!</Button>
+			<Button onClick={handleClick}>Don't click me!</Button>
 
-      <Snackbar
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        open={open}
-        autoHideDuration={6000}
-        onClose={handleClose}
+			<Snackbar
+				anchorOrigin={{
+					vertical: 'bottom',
+					horizontal: 'left',
+				}}
+				open={open}
+				autoHideDuration={6000}
+				onClose={handleClose}
 
-        message="I TOLD YOU TO NOT CLICK ME!"
+				message="I TOLD YOU TO NOT CLICK ME!"
 
 
-        action={
-          <React.Fragment>
-            <Button color="secondary" size="small" onClick={handleClose}>
-              UNDO
+				action={
+					<React.Fragment>
+						<Button color="secondary" size="small" onClick={handleClose}>
+							UNDO
             </Button>
-            <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
-              <CloseIcon fontSize="small" />
-            </IconButton>
-          </React.Fragment>
-        }
-      />
-    </div>
-  );
+						<IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+							<CloseIcon fontSize="small" />
+						</IconButton>
+					</React.Fragment>
+				}
+			/>
+		</div>
+	);
 }
 

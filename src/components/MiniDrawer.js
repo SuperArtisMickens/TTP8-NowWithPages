@@ -18,10 +18,10 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import SimpleSnackbar from './snackBar';
-import About_Us from './About_Us';
+import SimpleSnackbar from './Snackbar';
+import AboutUs from './AboutUs';
 import AppForm from './AppForm';
-import SimpleDialogDemo from './login';
+import SimpleDialogDemo from './Login';
 import ContactUs from './ContactUs';
 import Poll from './Poll';
 import DayChallange from './DayChallange';
@@ -192,7 +192,7 @@ export default function MiniDrawer() {
 						<Divider />
 					</Grid>
 					<Grid item xs={12}>
-						<About_Us />
+						<AboutUs />
 					</Grid>
 
 					{/* Poll */}
