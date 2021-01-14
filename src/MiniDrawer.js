@@ -26,8 +26,8 @@ import {
 	Switch,
 	Route,
 	Link,
-  } from "react-router-dom";
-  
+} from "react-router-dom";
+
 import Info from './Info';
 import Marathon from './Marathon';
 
@@ -109,7 +109,7 @@ export default function MiniDrawer() {
 	};
 
 	return (
-	
+
 		<div className={classes.root}>
 			<CssBaseline />
 			<AppBar
@@ -131,12 +131,12 @@ export default function MiniDrawer() {
 						<MenuIcon />
 					</IconButton>
 					<Grid container>
-						<Grid item xs={10}>
+						<Grid item xs={11}>
 							<Typography variant="h6" noWrap>
 								HeYau DeKredit
 							</Typography>
 						</Grid>
-						<Grid item xs={2}>
+						<Grid item xs={1}>
 							<SimpleDialogDemo />
 						</Grid>
 					</Grid>
@@ -180,7 +180,7 @@ export default function MiniDrawer() {
 						</Link>
 					</ListItem>
 				</List>
-			
+
 			</Drawer>
 			<main className={classes.content}>
 				<div className={classes.toolbar} />
@@ -195,11 +195,11 @@ export default function MiniDrawer() {
 						<Switch>
 							{/* This switches to the About page with the AboutUs component */}
 							<Route path="/Info">
-								<Info/>
+								<Info />
 							</Route>
 							{/* This switches to the Marathon page with the Day Challenge component */}
 							<Route path="/Marathon">
-								<Marathon/>
+								<Marathon />
 							</Route>
 							{/* This is the home page that isnt hooked up to anything right now */}
 							<Route path="/">
@@ -241,9 +241,9 @@ export default function MiniDrawer() {
 					</Grid>
 					<Grid item xs></Grid>
 				</Grid>
-				
+
 			</main>
 		</div>
-		
+
 	);
 }
