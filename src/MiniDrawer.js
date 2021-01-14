@@ -250,7 +250,7 @@ export default function MiniDrawer() {
 
 							{/* This is the home page that isnt hooked up to anything right now */}
 							<Route path="/">
-								<img src="https://i.imgur.com/zHOv7ih.jpeg" height="800"></img>
+								<img src="https://i.imgur.com/zHOv7ih.jpeg" alt="rich cat" height="800"></img>
 								<SimpleSnackbar />
 							</Route>
 
