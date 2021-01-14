@@ -130,12 +130,16 @@ export default function MiniDrawer() {
 					>
 						<MenuIcon />
 					</IconButton>
-
-					<Typography variant="h6" noWrap>
-						HeYau DeKredit
-					</Typography>
-					<SimpleDialogDemo />
-
+					<Grid container>
+						<Grid item xs={10}>
+							<Typography variant="h6" noWrap>
+								HeYau DeKredit
+							</Typography>
+						</Grid>
+						<Grid item xs={2}>
+							<SimpleDialogDemo />
+						</Grid>
+					</Grid>
 				</Toolbar>
 			</AppBar>
 			<Drawer
