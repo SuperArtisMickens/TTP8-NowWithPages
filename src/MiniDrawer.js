@@ -16,11 +16,10 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import MailIcon from '@material-ui/icons/Mail';
 import SimpleSnackbar from './components/Snackbar';
-import AppForm from './components/AppForm';
 import SimpleDialogDemo from './components/Login';
-import ContactUs from './components/ContactUs';
-import Poll from './components/Poll';
 import Button from '@material-ui/core/Button';
+import FriendCont from './components/FriendCont';
+import Submissions from './components/Submissions';
 
 import {
 	Switch,
@@ -183,8 +182,28 @@ export default function MiniDrawer() {
 						<Link to="/Marathon">
 							<Button><MailIcon></MailIcon> 52 Week Marathon </Button>
 						</Link>
+
 					</ListItem>
+
+					<ListItem>
+						{/* This link leads to the Friend Cont */}
+						<Link to="/FriendCont">
+							<Button>Refer A Friend! </Button>
+						</Link>
+
+
+					</ListItem>
+
+					<ListItem>
+						{/*This link leads to Submissions*/}
+						<Link to="/Submissions">
+							<Button>Submissions</Button>
+						</Link>
+
+					</ListItem>
+
 				</List>
+
 				<Divider />
 				<List>
 					<ListItem>
@@ -214,13 +233,21 @@ export default function MiniDrawer() {
 							<Route path="/Marathon">
 								<Marathon />
 							</Route>
-							{/* This switches to the Contact Us page with the ContactUs component */}
-							<Route path="/ContactUs">
-								<ContactUs />
+
+							{/* This is the home page that isnt hooked up to anything right now */}
+							<Route path="/FriendCont">
+								<FriendCont />
+
 							</Route>
+							{/* This switches to Submissions page*/}
+							<Route path="/Submissions">
+								<Submissions />
+							</Route>
+
 							{/* This is the home page that isnt hooked up to anything right now */}
 							<Route path="/">
 							</Route>
+
 						</Switch>
 
 					</Grid>
@@ -229,28 +256,11 @@ export default function MiniDrawer() {
 					the pages. I moved 2 as practice and for example. For now, they're 
 					just displayed at all times. */}
 
-					{/* Application */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs={12}>
-						<AppForm />
-					</Grid>
-
-					{/* Poll */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs={12}>
-						<Poll />
-					</Grid>
-
-					{/* Don't Click */}
-					<Grid item xs={12}>
-						<SimpleSnackbar></SimpleSnackbar>
-					</Grid>
 				</Grid>
+
 			</main>
 		</div>
+
+
 	);
 }

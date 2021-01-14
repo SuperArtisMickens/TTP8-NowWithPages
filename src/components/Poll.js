@@ -29,47 +29,28 @@ class Poll extends React.Component {
 
 
 				<div>
-					<Radio
-
-
-						value="a"
+					<Radio value="a"
 						name="radio-button-demo"
 						onChange=""
 						inputProps={{ 'aria-label': 'A' }}
 					/> Yau Ho
-      <Radio
-
-
-						value="b"
+      				<Radio value="b"
 						name="radio-button-demo"
 						onChange=""
 						inputProps={{ 'aria-label': 'B' }}
 					/>Henji
-
-      <Radio
-
-
-						value="d"
+      				<Radio value="d"
 						name="radio-button-demo"
 						onChange=""
 						inputProps={{ 'aria-label': 'D' }}
 					/>Deon
-      <Radio
-
-
-						value="e"
+      				<Radio value="e"
 						name="radio-button-demo"
 						onChange=""
 						inputProps={{ 'aria-label': 'E' }}
 					/> Kris
-    </div>
-
-
-
-
-
-
-			</>
+    			</div>
+		</>
 		)
 	}
 

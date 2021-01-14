@@ -85,30 +85,26 @@ export default function BasicTable() {
 By the end of the year, if you complete the challenge, you’ll have saved $1,378.</h5>
 			<TableContainer component={Paper}>
 				<Table className={classes.table} aria-label="simple table">
-					<TableHead> <h1> 52 Week Challenge </h1>
+					<TableHead> 
 						<TableRow>
-							<TableCell align="left">Week Number# </TableCell>
+							<TableCell align="left">Week Number#</TableCell>
 							<TableCell align="left">Deposit Amount</TableCell>
 							<TableCell align="left">Total Balance</TableCell>
-
 						</TableRow>
 					</TableHead>
 					<TableBody>
 						{rows.map((row) => (
 							<TableRow key={row.name}>
-								<TableCell component="th" scope="row"> {row.weekno}
+								<TableCell key={row.name} component="th" scope="row"> {row.weekno}
 									{row.name}
 								</TableCell>
-								<TableCell align="left">${row.depositam}</TableCell>
-								<TableCell align="left">${row.totalbal}</TableCell>
-
+								<TableCell key={row.depositam} align="left">${row.depositam}</TableCell>
+								<TableCell key={row.totalbal} align="left">${row.totalbal}</TableCell>
 							</TableRow>
 						))}
 					</TableBody>
 				</Table>
 			</TableContainer>
-
 		</>
-
 	);
 }
