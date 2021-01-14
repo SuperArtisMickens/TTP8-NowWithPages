@@ -9,7 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
 import AddIcon from '@material-ui/icons/Add';
-
+import BasicTextFields from './BasicTextFields';
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
@@ -29,7 +29,7 @@ function SimpleDialog(props) {
 			<DialogTitle id="simple-dialog-title">Set login: </DialogTitle>
 			<List>
 				<ListItem>
-					{/* <BasicTextFields></BasicTextFields> */}
+					<BasicTextFields></BasicTextFields>
 				</ListItem>
 
 				<ListItem autoFocus button onClick={() => handleListItemClick('addAccount')}>
