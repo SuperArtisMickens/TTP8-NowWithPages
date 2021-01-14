@@ -16,12 +16,11 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import MailIcon from '@material-ui/icons/Mail';
 import SimpleSnackbar from './components/Snackbar';
-import AppForm from './components/AppForm';
 import SimpleDialogDemo from './components/Login';
-import ContactUs from './components/ContactUs';
-import Poll from './components/Poll';
 import Button from '@material-ui/core/Button';
-
+import FriendCont from './components/FriendCont';
+import Submissions from './components/Submissions';
+import ContactUs from './components/ContactUs';
 import {
 	Switch,
 	Route,
@@ -165,6 +164,15 @@ export default function MiniDrawer() {
 				{/* These are the links to the pages that connect them to components */}
 				<List>
 					<ListItem>
+						{/* This link leads to the home page */}
+						<Link to="/">
+							<Button><MailIcon></MailIcon> Home </Button>
+						</Link>
+					</ListItem>
+				</List>
+				<Divider />
+				<List>
+					<ListItem>
 						{/* This link leads to the AboutUs component */}
 						<Link to="/Info">
 							<Button><MailIcon></MailIcon> About Us </Button>
@@ -176,7 +184,36 @@ export default function MiniDrawer() {
 					<ListItem>
 						{/* This link leads to the Day Challenge component */}
 						<Link to="/Marathon">
-							<Button>52 Week Marathon </Button>
+							<Button><MailIcon></MailIcon> 52 Week Marathon </Button>
+						</Link>
+
+					</ListItem>
+
+					<ListItem>
+						{/* This link leads to the Friend Cont */}
+						<Link to="/FriendCont">
+							<Button>Refer A Friend! </Button>
+						</Link>
+
+
+					</ListItem>
+
+					<ListItem>
+						{/*This link leads to Submissions*/}
+						<Link to="/Submissions">
+							<Button>Submissions</Button>
+						</Link>
+
+					</ListItem>
+
+				</List>
+
+				<Divider />
+				<List>
+					<ListItem>
+						{/* This link leads to the Contact Us component */}
+						<Link to="/ContactUs">
+							<Button><MailIcon></MailIcon> Contact Us </Button>
 						</Link>
 					</ListItem>
 				</List>
@@ -190,7 +227,6 @@ export default function MiniDrawer() {
 
 					{/* Snackbar: Didn't see a reason not to keep this button on the screen at all times */}
 					<Grid item xs={12}>
-						<SimpleSnackbar></SimpleSnackbar>
 						{/* Switch to your pages here! */}
 						<Switch>
 							{/* This switches to the About page with the AboutUs component */}
@@ -201,49 +237,31 @@ export default function MiniDrawer() {
 							<Route path="/Marathon">
 								<Marathon />
 							</Route>
+
+							{/* This is the home page that isnt hooked up to anything right now */}
+							<Route path="/FriendCont">
+								<FriendCont />
+
+							</Route>
+							{/* This switches to Submissions page*/}
+							<Route path="/Submissions">
+								<Submissions />
+							</Route>
+
+							<Route path="/ContactUs">
+								<ContactUs />
+							</Route>
+
 							{/* This is the home page that isnt hooked up to anything right now */}
 							<Route path="/">
+								<img src="https://i.imgur.com/zHOv7ih.jpeg" alt="rich cat" height="800"></img>
+								<SimpleSnackbar />
 							</Route>
+
 						</Switch>
-
 					</Grid>
-
-					{/* The components below can still be moved over to be a part of
-					the pages. I moved 2 as practice and for example. For now, they're 
-					just displayed at all times. */}
-
-					{/* Application */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs={12}>
-						<AppForm />
-					</Grid>
-
-
-
-					{/* Poll */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs={12}>
-						<Poll />
-					</Grid>
-
-
-					{/* Contact Us */}
-					<Grid item xs={12}>
-						<Divider />
-					</Grid>
-					<Grid item xs></Grid>
-					<Grid item xs={8}>
-						<ContactUs />
-					</Grid>
-					<Grid item xs></Grid>
 				</Grid>
-
 			</main>
 		</div>
-
 	);
 }
