@@ -28,8 +28,8 @@ import {
 	Link,
   } from "react-router-dom";
   
-  import About from './About';
-  import Marathon from './Marathon';
+import Info from './Info';
+import Marathon from './Marathon';
 
 const drawerWidth = 240;
 
@@ -162,20 +162,18 @@ export default function MiniDrawer() {
 				<List>
 					<ListItem>
 						{/* This link leads to the AboutUs component */}
-						<Link to="/About">
-							<Button><MailIcon></MailIcon> About </Button>
+						<Link to="/Info">
+							<Button><MailIcon></MailIcon> About Us </Button>
 						</Link>
 					</ListItem>
 				</List>
 				<Divider />
 				<List>
 					<ListItem>
-						<ListItem>
-							{/* This link leads to the Day Challenge component */}
-							<Link to="/Marathon">
-								<Button><MailIcon></MailIcon> 52 Week Marathon </Button>
-							</Link>
-						</ListItem>
+						{/* This link leads to the Day Challenge component */}
+						<Link to="/Marathon">
+							<Button>52 Week Marathon </Button>
+						</Link>
 					</ListItem>
 				</List>
 			
@@ -192,8 +190,8 @@ export default function MiniDrawer() {
 						{/* Switch to your pages here! */}
 						<Switch>
 							{/* This switches to the About page with the AboutUs component */}
-							<Route path="/About">
-								<About/>
+							<Route path="/Info">
+								<Info/>
 							</Route>
 							{/* This switches to the Marathon page with the Day Challenge component */}
 							<Route path="/Marathon">
