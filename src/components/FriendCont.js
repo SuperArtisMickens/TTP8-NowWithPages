@@ -13,7 +13,7 @@ class FriendCont extends React.Component {
 					multiline
 				/>
 
-                <TextField
+				<TextField
 					id="friendcontactEmail"
 					label="Friend Contact Email"
 					required

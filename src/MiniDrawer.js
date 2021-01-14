@@ -20,7 +20,7 @@ import SimpleDialogDemo from './components/Login';
 import Button from '@material-ui/core/Button';
 import FriendCont from './components/FriendCont';
 import Submissions from './components/Submissions';
-
+import ContactUs from './components/ContactUs';
 import {
 	Switch,
 	Route,
@@ -244,8 +244,14 @@ export default function MiniDrawer() {
 								<Submissions />
 							</Route>
 
+							<Route path="/ContactUs">
+								<ContactUs />
+							</Route>
+
 							{/* This is the home page that isnt hooked up to anything right now */}
 							<Route path="/">
+								<img src="https://i.imgur.com/zHOv7ih.jpeg" alt="rich cat" height="800"></img>
+								<SimpleSnackbar />
 							</Route>
 
 						</Switch>

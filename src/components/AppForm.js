@@ -47,5 +47,4 @@ class AppForm extends React.Component {
 		);
 	}
 }
-
 export default AppForm;
