@@ -160,6 +160,15 @@ export default function MiniDrawer() {
 				{/* These are the links to the pages that connect them to components */}
 				<List>
 					<ListItem>
+						{/* This link leads to the home page */}
+						<Link to="/">
+							<Button><MailIcon></MailIcon> Home </Button>
+						</Link>
+					</ListItem>
+				</List>
+				<Divider />
+				<List>
+					<ListItem>
 						{/* This link leads to the AboutUs component */}
 						<Link to="/Info">
 							<Button><MailIcon></MailIcon> About Us </Button>
@@ -171,7 +180,7 @@ export default function MiniDrawer() {
 					<ListItem>
 						{/* This link leads to the Day Challenge component */}
 						<Link to="/Marathon">
-							<Button>52 Week Marathon </Button>
+							<Button><MailIcon></MailIcon> 52 Week Marathon </Button>
 						</Link>
 
 					</ListItem>
@@ -195,6 +204,16 @@ export default function MiniDrawer() {
 
 				</List>
 
+				<Divider />
+				<List>
+					<ListItem>
+						{/* This link leads to the Contact Us component */}
+						<Link to="/ContactUs">
+							<Button><MailIcon></MailIcon> Contact Us </Button>
+						</Link>
+					</ListItem>
+				</List>
+
 			</Drawer>
 			<main className={classes.content}>
 				<div className={classes.toolbar} />
@@ -204,7 +223,6 @@ export default function MiniDrawer() {
 
 					{/* Snackbar: Didn't see a reason not to keep this button on the screen at all times */}
 					<Grid item xs={12}>
-						<SimpleSnackbar></SimpleSnackbar>
 						{/* Switch to your pages here! */}
 						<Switch>
 							{/* This switches to the About page with the AboutUs component */}
@@ -215,9 +233,11 @@ export default function MiniDrawer() {
 							<Route path="/Marathon">
 								<Marathon />
 							</Route>
+
 							{/* This is the home page that isnt hooked up to anything right now */}
 							<Route path="/FriendCont">
 								<FriendCont />
+
 							</Route>
 							{/* This switches to Submissions page*/}
 							<Route path="/Submissions">
@@ -240,6 +260,7 @@ export default function MiniDrawer() {
 
 			</main>
 		</div>
+
 
 	);
 }
