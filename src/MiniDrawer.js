@@ -14,21 +14,23 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
-import MailIcon from '@material-ui/icons/Mail';
 import SimpleSnackbar from './components/Snackbar';
 import SimpleDialogDemo from './components/Login';
 import Button from '@material-ui/core/Button';
 import FriendCont from './components/FriendCont';
 import Submissions from './components/Submissions';
 import ContactUs from './components/ContactUs';
-import {
-	Switch,
-	Route,
-	Link,
-} from "react-router-dom";
-
+import { Switch, Route, Link, } from "react-router-dom";
 import Info from './Info';
 import Marathon from './Marathon';
+
+// sidebar icons
+import HomeIcon from '@material-ui/icons/Home';
+import InfoIcon from '@material-ui/icons/Info';
+import EventAvailableIcon from '@material-ui/icons/EventAvailable';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
+import CreateIcon from '@material-ui/icons/Create';
+import MailIcon from '@material-ui/icons/Mail';
 
 const drawerWidth = 240;
 
@@ -166,66 +168,61 @@ export default function MiniDrawer() {
 					<ListItem>
 						{/* This link leads to the home page */}
 						<Link to="/">
-							<Button><MailIcon></MailIcon> Home </Button>
+							<Button>
+								<HomeIcon />Home
+							</Button>
 						</Link>
 					</ListItem>
-				</List>
-				<Divider />
-				<List>
+					<Divider />
 					<ListItem>
 						{/* This link leads to the AboutUs component */}
 						<Link to="/Info">
-							<Button><MailIcon></MailIcon> About Us </Button>
+							<Button>
+								<InfoIcon />About Us
+							</Button>
 						</Link>
 					</ListItem>
-				</List>
-				<Divider />
-				<List>
+					<Divider />
 					<ListItem>
 						{/* This link leads to the Day Challenge component */}
 						<Link to="/Marathon">
-							<Button><MailIcon></MailIcon> 52 Week Marathon </Button>
+							<Button>
+								<EventAvailableIcon />52 Week Marathon
+							</Button>
 						</Link>
-
 					</ListItem>
-
+					<Divider />
 					<ListItem>
 						{/* This link leads to the Friend Cont */}
 						<Link to="/FriendCont">
-							<Button>Refer A Friend! </Button>
+							<Button>
+								<PersonAddIcon />Refer A Friend!
+							</Button>
 						</Link>
-
-
 					</ListItem>
-
+					<Divider />
 					<ListItem>
 						{/*This link leads to Submissions*/}
 						<Link to="/Submissions">
-							<Button>Submissions</Button>
+							<Button>
+								<CreateIcon />Submissions
+							</Button>
 						</Link>
-
 					</ListItem>
-
-				</List>
-
-				<Divider />
-				<List>
+					<Divider />
 					<ListItem>
 						{/* This link leads to the Contact Us component */}
 						<Link to="/ContactUs">
-							<Button><MailIcon></MailIcon> Contact Us </Button>
+							<Button>
+								<MailIcon />Contact Us
+							</Button>
 						</Link>
 					</ListItem>
 				</List>
-
 			</Drawer>
 			<main className={classes.content}>
 				<div className={classes.toolbar} />
-
 				<Grid container spacing={3}>
-
-
-					{/* Snackbar: Didn't see a reason not to keep this button on the screen at all times */}
 					<Grid item xs={12}>
 						{/* Switch to your pages here! */}
 						<Switch>
@@ -233,26 +230,28 @@ export default function MiniDrawer() {
 							<Route path="/Info">
 								<Info />
 							</Route>
+
 							{/* This switches to the Marathon page with the Day Challenge component */}
 							<Route path="/Marathon">
 								<Marathon />
 							</Route>
 
-							{/* This is the home page that isnt hooked up to anything right now */}
+							{/* This switches to Friend Referral page*/}
 							<Route path="/FriendCont">
 								<FriendCont />
-
 							</Route>
+
 							{/* This switches to Submissions page*/}
 							<Route path="/Submissions">
 								<Submissions />
 							</Route>
 
+							{/* This switches to Contact Us page*/}
 							<Route path="/ContactUs">
 								<ContactUs />
 							</Route>
 
-							{/* This is the home page that isnt hooked up to anything right now */}
+							{/* This switches to Home page*/}
 							<Route path="/">
 								<img src="https://i.imgur.com/zHOv7ih.jpeg" alt="rich cat" height="800"></img>
 								<SimpleSnackbar />
